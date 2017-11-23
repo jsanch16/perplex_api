@@ -36,7 +36,9 @@ class Api::V1::UsersController < ApplicationController
 
   # DELETE /api/v1/users/1
   def destroy
+    user = User.find(params[:id])
     user.destroy
+    head :no_content
   end
 
   private
