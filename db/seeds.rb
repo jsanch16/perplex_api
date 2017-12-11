@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+Muscle.find_or_create_by(name: 'Biceps')
+Muscle.find_or_create_by(name: 'Triceps')
+Muscle.find_or_create_by(name: 'Deltoids')
+Muscle.find_or_create_by(name: 'Pecs')
+Muscle.find_or_create_by(name: 'Biceps')
+Muscle.find_or_create_by(name: 'Quads')
