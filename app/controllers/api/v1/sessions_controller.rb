@@ -3,9 +3,9 @@ class Api::V1::SessionsController < ApplicationController
 
   # POST /api/v1/sessions
   def create
-    command = AuthenticateUser.call(params[:email], params[:password])  
+    command = LoginUser.call(params[:email], params[:password])  
 
-    if command.sucess?
+    if command.success?
       render json: { auth_token: command.result }
     else
       render json: { error: command.errors }, status: :unauthorized
