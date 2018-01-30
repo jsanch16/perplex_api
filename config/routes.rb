@@ -10,7 +10,7 @@ Rails.application.routes.draw do
         resources :workouts, only: [:index, :show]
       end
       resources :sessions
-      # get '/login', to: 'sessions#create'
+      
     end
   end
 end

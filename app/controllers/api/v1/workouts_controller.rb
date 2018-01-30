@@ -17,19 +17,19 @@ class Api::V1::WorkoutsController < ApplicationController
   end
 
   # # POST /api/v1/workouts
-  # def create
-  #   @api_v1_workout = Api::V1::Workout.new(api_v1_workout_params)
+  def create
+    workout = Workout.new(workout_params)
 
-  #   if @api_v1_workout.save
-  #     render json: @api_v1_workout, status: :created, location: @api_v1_workout
-  #   else
-  #     render json: @api_v1_workout.errors, status: :unprocessable_entity
-  #   end
-  # end
+    if @api_v1_workout.save
+      render json: @api_v1_workout, status: :created, location: @api_v1_workout
+    else
+      render json: @api_v1_workout.errors, status: :unprocessable_entity
+    end
+  end
 
   # # PATCH/PUT /api/v1/workouts/1
   # def update
-  #   if @api_v1_workout.update(api_v1_workout_params)
+  #   if @api_v1_workout.update(workout_params)
   #     render json: @api_v1_workout
   #   else
   #     render json: @api_v1_workout.errors, status: :unprocessable_entity
@@ -48,7 +48,55 @@ class Api::V1::WorkoutsController < ApplicationController
   #   end
 
   #   # Only allow a trusted parameter "white list" through.
-  #   def api_v1_workout_params
+  #   def workout_params
   #     params.fetch(:api_v1_workout, {})
   #   end
 end
+
+options.
+
+workout_options = {
+  biceps: {
+      outer:
+      inner:
+      middle:
+      overall:
+      any:
+  },
+  triceps: {
+      long_head:
+      medial_head:
+      outer_head:
+      overall:
+      any:
+  },
+  shoulders: {
+    front: ,
+    rear: ,
+    middle: ,
+    overall: ,
+    any:
+  },
+  chest: {
+    upper: ,
+    lower: ,
+    inner: ,
+    overall: ,
+    any: 
+  },
+  back: {
+    traps:
+    upper_back:
+    lats:,
+    overall: ,
+    any: 
+  },
+  legs: {
+    calves:
+    quads_outers:
+    quads_inner:
+    glutes:
+    overall: 
+    any: 
+  },
+}
