@@ -13,15 +13,10 @@ class Api::V1::WorkoutsExercisesController < ApplicationController
   end
 
   # POST /api/v1/workouts_exercises
-  def create
-    @api_v1_workouts_exercise = Api::V1::WorkoutsExercise.new(api_v1_workouts_exercise_params)
-
-    if @api_v1_workouts_exercise.save
-      render json: @api_v1_workouts_exercise, status: :created, location: @api_v1_workouts_exercise
-    else
-      render json: @api_v1_workouts_exercise.errors, status: :unprocessable_entity
-    end
-  end
+  # def create
+  #   @api_v1_workouts_exercise = Api::V1::WorkoutsExercise.new(api_v1_workouts_exercise_params)
+  #   if params[:workout_id]
+  # end
 
   # PATCH/PUT /api/v1/workouts_exercises/1
   def update
