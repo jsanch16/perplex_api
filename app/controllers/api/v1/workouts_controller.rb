@@ -2,28 +2,24 @@ class Api::V1::WorkoutsController < ApplicationController
 
   # GET /api/v1/workouts
   def index
-    if params[:user_id]
-      workouts = Workout.where(user_id: params[:user_id])
-    else
-      workouts = Workout.all
-    end
+    workouts = Workout.where(user_id: current_user.id)
     render json: workouts, each_serializer: Api::V1::WorkoutsSerializer
   end
 
   # GET /api/v1/workouts/1
   def show
     workout = Workout.find(params[:workout_id])
-    render json: workout
+    render json: workout, each_serializer: Api::V1::WorkoutSerializer
   end
 
   # # POST /api/v1/workouts
   def create
-    workout = Workout.new(workout_params)
-
-    if @api_v1_workout.save
-      render json: @api_v1_workout, status: :created, location: @api_v1_workout
+    selected_ids = ExerciseSelector.new(params[:options])
+    workout = Workout.new(workout_params.merge(exercise_ids: selected_ids))
+    if workout.save
+      render json: workout, status: :created
     else
-      render json: @api_v1_workout.errors, status: :unprocessable_entity
+      render json: workout.errors, status: :unprocessable_entity
     end
   end
 
@@ -41,62 +37,8 @@ class Api::V1::WorkoutsController < ApplicationController
   #   @api_v1_workout.destroy
   # end
 
-  # private
-  #   # Use callbacks to share common setup or constraints between actions.
-  #   def set_api_v1_workout
-  #     @api_v1_workout = Api::V1::Workout.find(params[:id])
-  #   end
-
-  #   # Only allow a trusted parameter "white list" through.
-  #   def workout_params
-  #     params.fetch(:api_v1_workout, {})
-  #   end
+  private
+    def workout_params
+      params.permit(:name, :user_id, exercise_ids: [])
+    end
 end
-
-options.
-
-workout_options = {
-  biceps: {
-      outer:
-      inner:
-      middle:
-      overall:
-      any:
-  },
-  triceps: {
-      long_head:
-      medial_head:
-      outer_head:
-      overall:
-      any:
-  },
-  shoulders: {
-    front: ,
-    rear: ,
-    middle: ,
-    overall: ,
-    any:
-  },
-  chest: {
-    upper: ,
-    lower: ,
-    inner: ,
-    overall: ,
-    any: 
-  },
-  back: {
-    traps:
-    upper_back:
-    lats:,
-    overall: ,
-    any: 
-  },
-  legs: {
-    calves:
-    quads_outers:
-    quads_inner:
-    glutes:
-    overall: 
-    any: 
-  },
-}

@@ -6,11 +6,10 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json} do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
-      resources :users do
-        resources :workouts, only: [:index, :show]
-      end
-      resources :sessions
-      
+      resources :workouts, only: [:index, :show]
+      resources :exercises, only: [:show]
+      resources :muscles, only: [:index]
+      resources :sessions      
     end
   end
 end

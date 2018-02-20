@@ -15,10 +15,13 @@ back = MuscleGroup.find_or_create_by(name: 'Back')
 inner_biceps = Muscle.find_or_create_by(name: 'Inner biceps')
 outer_biceps = Muscle.find_or_create_by(name: 'Outer biceps')
 triceps_short_head = Muscle.find_or_create_by(name: 'Triceps short head')
-tricpes_long_head = Muscle.find_or_create_by(name: 'Triceps long head')
+triceps_long_head = Muscle.find_or_create_by(name: 'Triceps long head')
+triceps_medial_head = Muscle.find_or_create_by(name: 'Triceps medial head')
+
 rear_deltoids = Muscle.find_or_create_by(name: 'Rear deltoids')
 pecs = Muscle.find_or_create_by(name: 'Pecs')
-quads = Muscle.find_or_create_by(name: 'Quads')
+outer_quads = Muscle.find_or_create_by(name: 'Outer quads')
+inner_quads = Muscle.find_or_create_by(name: 'Inner quads')
 hamstrings = Muscle.find_or_create_by(name: 'Hamstrings')
 glutes = Muscle.find_or_create_by(name: 'Glutes')
 traps = Muscle.find_or_create_by(name: 'Trapezius')
@@ -26,17 +29,20 @@ lower_lats = Muscle.find_or_create_by(name: 'Lower lats')
 
 #Muscle groups
 biceps.muscles << inner_biceps << outer_biceps
-triceps.muscles << triceps_short_head << tricpes_long_head
+triceps.muscles << triceps_short_head << triceps_long_head << triceps_medial_head
 legs.muscles << quads << hamstrings << glutes
 shoulders.muscles << rear_deltoids
 back.muscles << traps << lower_lats
 
 #LEGS exercises
 lunges = Exercise.create(name: "Dumbbell lunges")
-lunges.muscles << glutes << hamstrings
+lunges.muscles << glutes
 
 incline_leg_press = Exercise.create(name: "Incline leg press")
-incline_leg_press.muscles << glutes << hamstrings
+incline_leg_press.muscles << hamstrings
+
+close_stance_seated_leg_press = Exercise.create(name: "Close-stance seated leg press")
+close_stance_seated_leg_press.muscles << outer_quads
 
 #BICEPS exercises
 close_grip_ez_bar_standing_curls = Exercise.create(name: "Cloze-grip EZ bar standing curls")
