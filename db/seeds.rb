@@ -14,6 +14,7 @@ back = MuscleGroup.find_or_create_by(name: 'Back')
 
 inner_biceps = Muscle.find_or_create_by(name: 'Inner biceps')
 outer_biceps = Muscle.find_or_create_by(name: 'Outer biceps')
+overall_biceps = Muscle.find_or_create_by(name: 'Overall biceps')
 triceps_short_head = Muscle.find_or_create_by(name: 'Triceps short head')
 triceps_long_head = Muscle.find_or_create_by(name: 'Triceps long head')
 triceps_medial_head = Muscle.find_or_create_by(name: 'Triceps medial head')
@@ -28,28 +29,29 @@ traps = Muscle.find_or_create_by(name: 'Trapezius')
 lower_lats = Muscle.find_or_create_by(name: 'Lower lats')
 
 #Muscle groups
-biceps.muscles << inner_biceps << outer_biceps
+biceps.muscles << inner_biceps << outer_biceps << overall_biceps
 triceps.muscles << triceps_short_head << triceps_long_head << triceps_medial_head
-legs.muscles << quads << hamstrings << glutes
+legs.muscles << outer_quads << inner_quads << hamstrings << glutes
 shoulders.muscles << rear_deltoids
 back.muscles << traps << lower_lats
 
 #LEGS exercises
-lunges = Exercise.create(name: "Dumbbell lunges")
-lunges.muscles << glutes
-
-incline_leg_press = Exercise.create(name: "Incline leg press")
-incline_leg_press.muscles << hamstrings
-
-close_stance_seated_leg_press = Exercise.create(name: "Close-stance seated leg press")
-close_stance_seated_leg_press.muscles << outer_quads
+Exercise.create(name: "Dumbbell lunges", muscles: [glutes])
+Exercise.create(name: "Incline leg press", muscles: [hamstrings])
+Exercise.create(name: "Close-stance seated leg press", muscles: [outer_quads])
 
 #BICEPS exercises
-close_grip_ez_bar_standing_curls = Exercise.create(name: "Cloze-grip EZ bar standing curls")
-close_grip_ez_bar_standing_curls.muscles << inner_biceps 
+#inner biceps
+Exercise.create(name: "Cloze-grip EZ bar standing curls", muscles: [inner_biceps])
+Exercise.create(name: "Seated machine biceps curls", muscles: [inner_biceps])
 
-standing_cable_curls = Exercise.create(name: "Standing cable curls")
-standing_cable_curls.muscles << outer_biceps
+#outer biceps
+Exercise.create(name: "Standing cable curls", muscles: [outer_biceps])
+Exercise.create(name: "Side ways seated preacher curls", muscles: [outer_biceps])
+
+#overall biceps
+Exercise.create(name: "Hammer curls", muscles: [overall_biceps])
+Exercise.create(name: "Concentration curls", muscles: [overall_biceps])
 
 
 

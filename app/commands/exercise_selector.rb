@@ -7,18 +7,19 @@ class ExerciseSelector
 
 	def call
 		selected_ids = []
-		options.each do |exercise_muscle_focus, number|
-			selected_ids << Exercise.send(:exercise_muscle_focus).order("RANDOM()").limit(number)
+		@options.each do |muscle, count|
+			selected_ids += Exercise.send(muscle.to_sym).order("RANDOM()").limit(count).ids
 		end
+    selected_ids
 	end
 end
 
 
-workout_options = {
-  biceps_any: ,
-  inner_biceps: ,
-  outer_biceps: 
-}
+# workout_options = {
+#   biceps_any: ,
+#   inner_biceps: ,
+#   outer_biceps: 
+# }
   # },
   # triceps: {
   #     long_head:
@@ -56,4 +57,3 @@ workout_options = {
   #   overall: 
   #   any: 
   # },
-}
