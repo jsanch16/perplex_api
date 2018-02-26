@@ -9,8 +9,8 @@ class Api::V1::ExercisesController < ApplicationController
 
   # GET /api/v1/exercises/1
   def show
-    exercise = Exercise.find(params[:exercise_id])
-    render json: exercise
+    exercise = Exercise.find(params[:id].to_i)
+    render json: exercise, serializer: Api::V1::ExerciseSerializer
   end
 
   # # POST /api/v1/exercises

@@ -6,9 +6,9 @@ class Exercise < ApplicationRecord
   has_many :exercises_muscles, dependent: :destroy
   has_many :muscles, through: :exercises_muscles
 
-  scope :biceps_any, -> { joins(:exercises_muscles).where(exercises_muscles: {muscle_id: Muscle.all_biceps.ids}) }
+  scope :all_biceps, -> { joins(:exercises_muscles).where(exercises_muscles: {muscle_id: Muscle.all_biceps.ids}) }
   scope :inner_biceps, -> { joins(:exercises_muscles => :muscles).where(muscles: {name: 'Inner biceps'})}
   scope :outer_biceps, -> { joins(:exercises_muscles => :muscles).where(muscles: {name: 'Outer biceps'})}
-  scope :biceps_overall, -> { joins(:exercises_muscles => :muscles).where(muscles: {name: 'Overall biceps'})}
+  scope :overall_biceps, -> { joins(:exercises_muscles => :muscles).where(muscles: {name: 'Overall biceps'})}
 
 end

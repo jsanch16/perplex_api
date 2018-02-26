@@ -24,13 +24,13 @@ class Api::V1::WorkoutsController < ApplicationController
   end
 
   # # PATCH/PUT /api/v1/workouts/1
-  # def update
-  #   if @api_v1_workout.update(workout_params)
-  #     render json: @api_v1_workout
-  #   else
-  #     render json: @api_v1_workout.errors, status: :unprocessable_entity
-  #   end
-  # end
+  def update
+    if params[:exercise_id]
+      render json: @api_v1_workout
+    else
+      render json: @api_v1_workout.errors, status: :unprocessable_entity
+    end
+  end
 
   # # DELETE /api/v1/workouts/1
   # def destroy
