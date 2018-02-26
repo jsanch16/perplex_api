@@ -1,3 +1,5 @@
+User.find_or_create_by(email: 'jsanch@somewhere.com', password: 'password', password_confirmation: 'password')
+
 
 #Muscle groups
 biceps = MuscleGroup.find_or_create_by!(name: 'Biceps')
