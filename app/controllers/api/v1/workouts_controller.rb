@@ -2,7 +2,7 @@ class Api::V1::WorkoutsController < ApplicationController
 
   # GET /api/v1/workouts
   def index
-    workouts = Workout.where(user_id: current_user.id)
+    workouts = current_user.workouts
     render json: workouts, each_serializer: Api::V1::WorkoutsSerializer
   end
 

@@ -22,7 +22,7 @@ class AuthorizeApiRequest
     @decoded_auth_token ||= JsonWebToken.decode(http_auth_headers)
   end
 
-  def http_auth_headers
+  def http_auth_header
     if headers['X-User-Token'].present?
       return headers['X-User-Token'].split(' ').last
     else
