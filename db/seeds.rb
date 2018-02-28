@@ -1,4 +1,4 @@
-User.find_or_create_by(email: 'jsanch@somewhere.com', password: 'password', password_confirmation: 'password')
+User.create!(email: 'jsanch@somewhere.com', password: "password", password_confirmation: "password")
 
 
 #Muscle groups

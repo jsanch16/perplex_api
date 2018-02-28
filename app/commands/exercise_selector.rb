@@ -1,13 +1,13 @@
 class ExerciseSelector
 	prepend SimpleCommand
 
-	def initialize(options)
-		@options = options
+	def initialize(selections)
+		@selections = selections
 	end
 
 	def call
 		selected_ids = []
-		@options.each do |selection_type, count|
+		@selections.each do |selection_type, count|
 			selected_ids += Exercise.send(selection_type.to_sym).order("RANDOM()").limit(count).ids
 		end
     selected_ids
