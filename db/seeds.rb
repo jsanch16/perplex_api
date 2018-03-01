@@ -36,7 +36,7 @@ lower_lats = Muscle.find_or_create_by!(name: 'Lower lats')
 biceps.muscles << inner_biceps << outer_biceps << overall_biceps
 triceps.muscles << triceps_short_head << triceps_long_head << triceps_medial_head
 legs.muscles << outer_quads << inner_quads << hamstrings << glutes << calves
-shoulders.muscles << rear_deltoids
+shoulders.muscles << rear_deltoids << front_deltoids << lateral_deltoids
 chest.muscles << upper_pecs << lower_pecs << inner_pecs << overall_pecs
 back.muscles << traps << lower_lats
 
@@ -62,9 +62,9 @@ Exercise.create(name: "Incline leg press", muscles: [overall_legs])
 
 #BICEPS exercises
 #inner biceps
-Exercise.create(name: "Close-grip EZ bar standing curls", muscles: [inner_biceps])
-Exercise.create(name: "Seated machine biceps curls", muscles: [inner_biceps])
-Exercise.create(name: "Close-grip seated preacher curls", muscles: [inner_biceps])
+Exercise.create(name: "Close-grip EZ Bar Standing Curls", muscles: [inner_biceps])
+Exercise.create(name: "Close-grip Seated Machine Biceps Curls", muscles: [inner_biceps])
+Exercise.create(name: "Close-grip Seated Preacher Curls", muscles: [inner_biceps])
 
 #outer biceps
 Exercise.create(name: "Standing One-Arm Cable Curls", muscles: [outer_biceps])
