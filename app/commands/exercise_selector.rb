@@ -8,7 +8,7 @@ class ExerciseSelector
 	def call
 		selected_ids = []
 		@selections.each do |selection_type, count|
-			selected_ids += Exercise.send(selection_type.to_sym).order("RANDOM()").limit(count).ids
+			selected_ids += Exercise.send(selection_type.to_sym).order("RANDOM()").limit(count).ids.collect{|id| {selection_type: selection_type, exercise_id: id}}
 		end
     selected_ids
 	end

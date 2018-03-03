@@ -14,8 +14,9 @@ class Api::V1::WorkoutsController < ApplicationController
 
   # # POST /api/v1/workouts
   def create
-    selected_ids = ExerciseSelector.call(params[:selections]).result
-    workout = current_user.workouts.build(workout_params.merge(exercise_ids: selected_ids, date: Time.now))
+    selected_exercises = ExerciseSelector.call(params[:selections]).result
+    params[:workouts_exercises_attributes] = selected_exercises
+    workout = current_user.workouts.build(workout_params.merge(date: Time.now))
     if workout.save
       render json: workout, serializer: Api::V1::WorkoutSerializer, status: :created
     else
@@ -39,6 +40,6 @@ class Api::V1::WorkoutsController < ApplicationController
 
   private
     def workout_params
-      params.permit(:name, :user_id, :date, exercise_ids: [])
+      params.permit(:name, :user_id, :date, workouts_exercises_attributes: [:selection_type, :exercise_id])
     end
 end
