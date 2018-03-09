@@ -6,6 +6,6 @@ class ExerciseSwap
   end
     
   def call
-    Exercise.send(@selection_type.to_sym).order("RANDOM()").limit(1).pluck(:id)
+    Exercise.send(@selection_type.to_sym).order("RANDOM()").limit(1).pluck(:id).first
   end
 end

@@ -9,7 +9,7 @@ class Api::V1::WorkoutsController < ApplicationController
   # GET /api/v1/workouts/1
   def show
     workout = Workout.find(params[:workout_id])
-    render json: workout, each_serializer: Api::V1::WorkoutSerializer
+    render json: workout, serializer: Api::V1::WorkoutSerializer
   end
 
   # # POST /api/v1/workouts
