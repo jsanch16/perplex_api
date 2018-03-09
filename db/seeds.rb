@@ -19,6 +19,7 @@ triceps_medial_head = Muscle.find_or_create_by!(name: 'Triceps medial head')
 rear_deltoids = Muscle.find_or_create_by!(name: 'Rear deltoids')
 front_deltoids = Muscle.find_or_create_by!(name: 'Front deltoids')
 lateral_deltoids = Muscle.find_or_create_by!(name: 'Lateral deltoids')
+overall_deltoids = Muscle.find_or_create_by!(name: 'Overall deltoids')
 upper_pecs = Muscle.find_or_create_by!(name: 'Upper pecs')
 lower_pecs = Muscle.find_or_create_by!(name: 'Lower pecs')
 inner_pecs = Muscle.find_or_create_by!(name: 'Inner pecs')
@@ -43,34 +44,28 @@ back.muscles << traps << lower_lats
 #LEGS exercises
 #inner quads
 Exercise.create(name: "Wide Stance Leg Extension", muscles: [outer_quads])
-
 #outer quads
 Exercise.create(name: "Close-stance Seated leg press", muscles: [outer_quads])
 Exercise.create(name: "Close-stance Incline Leg Press", muscles: [outer_quads])
 Exercise.create(name: "Close-stance Squats", muscles: [outer_quads])
-
 #hamstrings
 Exercise.create(name: "Romanian Deadlift With Dumbbells", muscles: [hamstrings])
 Exercise.create(name: "Barbell Deadlift", muscles: [hamstrings])
 Exercise.create(name: "Sumo Deadlift", muscles: [hamstrings])
 Exercise.create(name: "Lying Hamstring Curls", muscles: [hamstrings])
 Exercise.create(name: "Seated Hamstring Extension", muscles: [hamstrings])
-
 #glutes
 Exercise.create(name: "Dumbbell Lunges", muscles: [glutes])
 Exercise.create(name: "Single Leg Dumbbell Step Up", muscles: [glutes])
-
 #calves
 Exercise.create(name: "Seated Calf Raises", muscles: [calves])
 Exercise.create(name: "Standing machine calf raises", muscles: [calves])
 Exercise.create(name: "Calf Press On The Leg Press Machine", muscles: [calves])
 Exercise.create(name: "Calf Press Machine", muscles: [calves])
-
 #overall legs
 Exercise.create(name: "Decline Leg Press", muscles: [overall_legs])
 Exercise.create(name: "Barbell Back Squat", muscles: [overall_legs])
 Exercise.create(name: "Barbell Front Squat", muscles: [overall_legs])
-
 
 
 #BICEPS exercises
@@ -78,23 +73,42 @@ Exercise.create(name: "Barbell Front Squat", muscles: [overall_legs])
 Exercise.create(name: "Close-grip EZ Bar Standing Curls", muscles: [inner_biceps])
 Exercise.create(name: "Close-grip Seated Machine Biceps Curls", muscles: [inner_biceps])
 Exercise.create(name: "Close-grip Seated Preacher Curls", muscles: [inner_biceps])
-
 #outer biceps
 Exercise.create(name: "Standing One-Arm Cable Curls", muscles: [outer_biceps])
 Exercise.create(name: "Side ways Seated Preacher Curls", muscles: [outer_biceps])
 Exercise.create(name: "Wide-Grip Barbell Curls", muscles: [outer_biceps])
 Exercise.create(name: "Overhead Cable Curls", muscles: [outer_biceps])
 Exercise.create(name: "Incline Bench Dumbbell Curls", muscles: [outer_biceps])
-
 #overall biceps
 Exercise.create(name: "Hammer Curls", muscles: [overall_biceps])
 Exercise.create(name: "Concentration Curls", muscles: [overall_biceps])
 Exercise.create(name: "Dumbbell Biceps Curls", muscles: [overall_biceps])
 Exercise.create(name: "One-Arm Seated Dumbbell Preacher Curls", muscles: [overall_biceps])
 
+
 #TRICEPS
 #triceps medial head
 Exercise.create(name: "Dumbell Skull Crushers", muscles: [triceps_medial_head])
+Exercise.create(name: "Dips", muscles: [triceps_medial_head])
+#triceps short head
+Exercise.create(name: "Triceps Flat Bar Pulldown", muscles: [triceps_short_head])
+Exercise.create(name: "Triceps Rope Pulldown", muscles: [triceps_short_head])
+Exercise.create(name: "Reverse-Grip Triceps Pulldown", muscles: [triceps_medial_head])
+#triceps long head
+Exercise.create(name: "Triceps EZ Bar Skull Crushers", muscles: [triceps_long_head])
+Exercise.create(name: "Standing Triceps Overhead Extension", muscles: [triceps_long_head])
+Exercise.create(name: "Seated Triceps Overhead Extension", muscles: [triceps_long_head])
+Exercise.create(name: "Standing One-Arm Triceps Extension", muscles: [triceps_medial_head])
+
+#SHOULDERS
+#front deltoids
+
+#overall deltoids
+Exercise.create(name: "Single-Arm Linnear Jammer", muscles: [overall_deltoids])
+
+
+
+
 
 
 
