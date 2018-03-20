@@ -31,7 +31,8 @@ hamstrings = Muscle.find_or_create_by!(name: 'Hamstrings')
 glutes = Muscle.find_or_create_by!(name: 'Glutes')
 calves = Muscle.find_or_create_by!(name: 'Calves')
 traps = Muscle.find_or_create_by!(name: 'Trapezius')
-lower_lats = Muscle.find_or_create_by!(name: 'Lower lats')
+lats = Muscle.find_or_create_by!(name: 'Lats')
+middle_back = Muscle.find_or_create_by!(name: 'Middle back')
 
 #Muscle groups
 biceps.muscles << inner_biceps << outer_biceps << overall_biceps
@@ -39,7 +40,7 @@ triceps.muscles << triceps_short_head << triceps_long_head << triceps_medial_hea
 legs.muscles << outer_quads << inner_quads << hamstrings << glutes << calves
 shoulders.muscles << rear_deltoids << front_deltoids << lateral_deltoids
 chest.muscles << upper_pecs << lower_pecs << inner_pecs << overall_pecs
-back.muscles << traps << lower_lats
+back.muscles << traps << lats << middle_back
 
 #LEGS exercises
 #inner quads
@@ -49,18 +50,21 @@ Exercise.create(name: "Close-stance Seated leg press", muscles: [outer_quads])
 Exercise.create(name: "Close-stance Incline Leg Press", muscles: [outer_quads])
 Exercise.create(name: "Close-stance Squats", muscles: [outer_quads])
 #hamstrings
-Exercise.create(name: "Romanian Deadlift With Dumbbells", muscles: [hamstrings])
+Exercise.create(name: "Stiff-Leg Deadlift With Dumbbells", muscles: [hamstrings])
+Exercise.create(name: "Stiff-Leg Deadlift With Barbell", muscles: [hamstrings])
 Exercise.create(name: "Barbell Deadlift", muscles: [hamstrings])
-Exercise.create(name: "Sumo Deadlift", muscles: [hamstrings])
 Exercise.create(name: "Lying Hamstring Curls", muscles: [hamstrings])
 Exercise.create(name: "Seated Hamstring Extension", muscles: [hamstrings])
+Exercise.create(name: "Standin Hamstring Extension", muscles: [hamstrings])
 #glutes
 Exercise.create(name: "Dumbbell Lunges", muscles: [glutes])
 Exercise.create(name: "Single Leg Dumbbell Step Up", muscles: [glutes])
+Exercise.create(name: "Sumo Deadlift", muscles: [glutes])
 #calves
 Exercise.create(name: "Seated Calf Raises", muscles: [calves])
 Exercise.create(name: "Standing machine calf raises", muscles: [calves])
-Exercise.create(name: "Calf Press On The Leg Press Machine", muscles: [calves])
+Exercise.create(name: "Calf Press On Seated Leg Press Machine", muscles: [calves])
+Exercise.create(name: "Calf Press On Decline Leg Press Machine", muscles: [calves])
 Exercise.create(name: "Calf Press Machine", muscles: [calves])
 #overall legs
 Exercise.create(name: "Decline Leg Press", muscles: [overall_legs])
@@ -100,11 +104,66 @@ Exercise.create(name: "Standing Triceps Overhead Extension", muscles: [triceps_l
 Exercise.create(name: "Seated Triceps Overhead Extension", muscles: [triceps_long_head])
 Exercise.create(name: "Standing One-Arm Triceps Extension", muscles: [triceps_medial_head])
 
+
 #SHOULDERS
 #front deltoids
-
+Exercise.create(name: "Front Dumbbell Raise", muscles: [front_deltoids])
+Exercise.create(name: "Front Cable Raise", muscles: [front_deltoids])
+#lateral deltoids
+Exercise.create(name: "Dumbbell Lateral Raise", muscles: [lateral_deltoids])
+Exercise.create(name: "Lateral Cable Raise", muscles: [lateral_deltoids])
+Exercise.create(name: "Wide Grip Upright Barbell Row", muscles: [lateral_deltoids])
+Exercise.create(name: "Seated Dumbbell Lateral Raise", muscles: [lateral_deltoids])
+Exercise.create(name: "Machine Lateral Raise", muscles: [lateral_deltoids])
+#rear deltoids
+Exercise.create(name: "Reverse Cable Flyes", muscles: [rear_deltoids])
+Exercise.create(name: "Reverse Cable Flye Machine", muscles: [rear_deltoids])
 #overall deltoids
 Exercise.create(name: "Single-Arm Linnear Jammer", muscles: [overall_deltoids])
+Exercise.create(name: "Side Laterals to Front Raise", muscles: [overall_deltoids])
+Exercise.create(name: "Dumbbell Shoulder Press", muscles: [overall_deltoids])
+Exercise.create(name: "Standing Palms-In Dumbbell Press", muscles: [overall_deltoids])
+Exercise.create(name: "Standing Barbell Shoulder Press", muscles: [overall_deltoids])
+Exercise.create(name: "Seated Dumbbell Shoulder Press", muscles: [overall_deltoids])
+Exercise.create(name: "Upright Barbell Row", muscles: [overall_deltoids])
+Exercise.create(name: "Arnold Press", muscles: [overall_deltoids])
+
+
+#CHEST
+#upper pecs
+Exercise.create(name: "Incline Bench Press", muscles: [upper_pecs])
+Exercise.create(name: "Incline Dumbbell Flyes", muscles: [upper_pecs])
+Exercise.create(name: "Incline Press Machine", muscles: [upper_pecs])
+#lower pecs
+Exercise.create(name: "Lower Pec Press Machine", muscles: [lower_pecs])
+#inner pecs
+Exercise.create(name: "Cable Flyes", muscles: [inner_pecs])
+Exercise.create(name: "Fly Machine", muscles: [inner_pecs])
+#overall pecs
+Exercise.create(name: "Bench Press", muscles: [overall_pecs])
+Exercise.create(name: "Dumbbell Bench Press", muscles: [overall_pecs])
+
+
+#BACK
+#lats
+Exercise.create(name: "V-Bar Pulldown", muscles: [lats])
+Exercise.create(name: "Close-Grip Lat Pulldown", muscles: [lats])
+Exercise.create(name: "Wide-Grip Lat Pulldown", muscles: [lats])
+Exercise.create(name: "Reverse Grip Lat Pulldown", muscles: [lats])
+Exercise.create(name: "Rope Straight-Arm Pulldown", muscles: [lats])
+#middle back
+Exercise.create(name: "Seated Cable Rows", muscles: [middle_back])
+Exercise.create(name: "Seated One-arm Cable Pulley Rows", muscles: [middle_back])
+Exercise.create(name: "Lying T-Bar Row Machine", muscles: [middle_back])
+Exercise.create(name: "Leveral High Row Machine", muscles: [middle_back])
+#traps
+Exercise.create(name: "Dummbell Shrugs", muscles: [traps])
+Exercise.create(name: "Smith Machine Shrugs", muscles: [traps])
+Exercise.create(name: "Barbell Shrugs", muscles: [traps])
+
+
+
+
 
 
 
