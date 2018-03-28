@@ -44,7 +44,7 @@ back.muscles << traps << lats << middle_back
 
 #LEGS exercises
 #inner quads
-Exercise.create(name: "Wide Stance Leg Extension", muscles: [outer_quads])
+Exercise.create(name: "Wide Stance Leg Extension", muscles: [inner_quads])
 #outer quads
 Exercise.create(name: "Close-stance Seated leg press", muscles: [outer_quads])
 Exercise.create(name: "Close-stance Incline Leg Press", muscles: [outer_quads])
@@ -165,6 +165,32 @@ Exercise.create(name: "Barbell Shrugs", muscles: [traps])
 
 
 
+
+	# Glutes & hamstrings
+	# 	Lunges
+	# 	Bulgarian split squat
+	# 	Goblet squat
+	# 	incline leg press
+	# 	Back squats
+	# 	Single legged dumbbell deadlift
+	# 	stiff legged deadlifts w/ dumbbells
+	# 	stiff legged deadlifts w/ barbell
+	# 	seated hamstring curls
+	# 	lying hamstring curls
+	# 	standing hamstring curls
+	# Outer quads
+	# 	back squats
+	# 	close stance seated leg press
+	# 	close stance declined leg press
+	# Inner quads
+	# 	front squats
+	# 	wide stance leg extensions
+	# 	bulgarian split squat
+	# Calves
+	# 	seated calf raise
+	# 	standing calf raise
+	# 	leg press calf raises
+	# 	seats calf twist
 
 
 
