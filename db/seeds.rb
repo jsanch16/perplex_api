@@ -44,7 +44,7 @@ back.muscles << traps << lats << middle_back
 
 #LEGS exercises
 #inner quads
-Exercise.create(name: "Wide Stance Leg Extension", muscles: [inner_quads])
+Exercise.create(name: "Toes Out Leg Extension", muscles: [inner_quads])
 #outer quads
 Exercise.create(name: "Close-stance Seated leg press", muscles: [outer_quads])
 Exercise.create(name: "Close-stance Incline Leg Press", muscles: [outer_quads])
@@ -54,8 +54,8 @@ Exercise.create(name: "Stiff-Leg Deadlift With Dumbbells", muscles: [hamstrings]
 Exercise.create(name: "Stiff-Leg Deadlift With Barbell", muscles: [hamstrings])
 Exercise.create(name: "Barbell Deadlift", muscles: [hamstrings])
 Exercise.create(name: "Lying Hamstring Curls", muscles: [hamstrings])
-Exercise.create(name: "Seated Hamstring Extension", muscles: [hamstrings])
-Exercise.create(name: "Standin Hamstring Extension", muscles: [hamstrings])
+# Exercise.create(name: "Seated Hamstring Extension", muscles: [hamstrings])
+Exercise.create(name: "Standing Hamstring Extension", muscles: [hamstrings])
 #glutes
 Exercise.create(name: "Dumbbell Lunges", muscles: [glutes])
 Exercise.create(name: "Single Leg Dumbbell Step Up", muscles: [glutes])
@@ -155,7 +155,7 @@ Exercise.create(name: "Rope Straight-Arm Pulldown", muscles: [lats])
 Exercise.create(name: "Seated Cable Rows", muscles: [middle_back])
 Exercise.create(name: "Seated One-arm Cable Pulley Rows", muscles: [middle_back])
 Exercise.create(name: "Lying T-Bar Row Machine", muscles: [middle_back])
-Exercise.create(name: "Leveral High Row Machine", muscles: [middle_back])
+Exercise.create(name: "High Row Machine", muscles: [middle_back])
 #traps
 Exercise.create(name: "Dummbell Shrugs", muscles: [traps])
 Exercise.create(name: "Smith Machine Shrugs", muscles: [traps])
