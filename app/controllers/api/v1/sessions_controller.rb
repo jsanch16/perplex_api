@@ -3,7 +3,7 @@ class Api::V1::SessionsController < ApplicationController
 
   # POST /api/v1/sessions
   def create
-    command = LoginUser.call(params[:email], params[:password])  
+    command = LoginUser.call(params[:email], params[:password])
 
     if command.success?
       render json: { auth_token: command.result }
@@ -16,11 +16,4 @@ class Api::V1::SessionsController < ApplicationController
   def destroy
     @api_v1_session.destroy
   end
-
-  private
-
-    # Only allow a trusted parameter "white list" through.
-    # def session_params
-    #   params.fetch(:api_v1_session, {})
-    # end
 end
