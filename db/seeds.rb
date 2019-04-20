@@ -1,7 +1,7 @@
 User.create!(email: 'jsanch@somewhere.com', password: "password", password_confirmation: "password")
+User.create!(email: 'jim@somewhere.com', password: "password", password_confirmation: "password")
 
-
-#Muscle groups
+# Muscle groups
 biceps = MuscleGroup.find_or_create_by!(name: 'Biceps')
 triceps = MuscleGroup.find_or_create_by!(name: 'Triceps')
 legs = MuscleGroup.find_or_create_by!(name: 'Legs')
