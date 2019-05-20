@@ -1,11 +1,11 @@
 class Api::V1::ExercisesController < ApplicationController
 
   # # GET /api/v1/exercises
-  # def index
-  #   @api_v1_exercises = Api::V1::Exercise.all
+  def index
+    exercises = Exercise.all
 
-  #   render json: @api_v1_exercises
-  # end
+    render json: exercises
+  end
 
   # GET /api/v1/exercises/1
   def show

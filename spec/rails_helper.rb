@@ -6,6 +6,7 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
+require 'database_cleaner'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -54,6 +55,23 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # add `FactoryBot` methods
+  config.include FactoryBot::Syntax::Methods
+
+  # start by truncating all the tables but then use the faster transaction
+  # strategy the rest of the time.
+  config.before(:suite) do
+    DatabaseCleaner.clean_with(:truncation)
+    DatabaseCleaner.strategy = :transaction
+  end
+
+  # start the transaction strategy as examples are run
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
 end
 
 Shoulda::Matchers.configure do |config|
@@ -62,10 +80,10 @@ Shoulda::Matchers.configure do |config|
     with.test_framework :rspec
 
     # Choose one or more libraries:
-    with.library :active_record
-    with.library :active_model
+    # with.library :active_record
+    # with.library :active_model
     # with.library :action_controller
     # Or, choose the following (which implies all of the above):
-    # with.library :rails
+    with.library :rails
   end
 end

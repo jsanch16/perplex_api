@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Api::V1::Exercises", type: :request do
+  let(:exercises) { create_list :exercise, 3}
   describe "GET /api_v1_exercises" do
     it "works! (now write some real specs)" do
       get api_v1_exercises_path

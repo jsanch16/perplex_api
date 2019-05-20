@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       resources :workouts_exercises, only: [:update]
       resources :exercises, only: [:index, :show]
       resources :muscles, only: [:index]
-      resources :sessions   
+      resources :sessions
     end
   end
 end
